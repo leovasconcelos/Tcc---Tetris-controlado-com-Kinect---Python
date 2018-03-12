@@ -1,0 +1,143 @@
+cd /home/leonardo/Tcc/Arquivos/Codigos
+
+python Tetris
+
+sudo freenect-glview
+
+ERRO: 
+
+
+tela no fundo
+
+e mexer na peça
+
+Verificar movimentos
+mudar comando dependendo da fase
+movimentos dos jogadores juntos
+    apenas pausar o jogo se os dois jogadores colocarem as mãos para frente
+    alterar comando dos jogadores
+	
+	
+for x in player1HandRightx:
+	print x
+	
+	
+	for x in player1HandRightx:
+		if player1HandRightx[x+1] > x
+			contRd +=	
+		elif player1HandRightx[x+1] < x
+			contRe -=
+			
+	Total = contRd + contRe
+	if contRd > (total*0.8):
+		Direita
+	elif contRe > (total*0.8):
+		Esquerda
+	elif
+		nada
+		
+		pontoMeio = x*0.5
+		if contRxD > verifica and player1HandRightx[0] < player1HandRightx[pontoMeio] and player1HandRightx[pontoMeio] < player1HandRightx[x-1]:
+				#print "direita"
+				statusplayer1HandRightx.append(1)
+			elif contRxE > verifica and player1HandRightx[0] > player1HandRightx[pontoMeio] and player1HandRightx[pontoMeio] > player1HandRightx[x-1] :
+				#print "esquerda"
+				statusplayer1HandRightx.append(2)
+			else:
+				#print "parado"
+				statusplayer1HandRightx.append(0)
+				
+				
+				
+verifica = (frames * 0.7)
+			verifica2 = player1HandRightx[len(player1HandRightx)-1] - player1HandRightx[0] 
+			print verifica2
+			player1HandRightx=[]
+			
+			if contRxD > verifica and (verifica2 > 10 or verifica2 < -10) :
+				print "direita"
+				statusplayer1HandRightx.append(1)
+			elif contRxE > verifica and (verifica2 > 10 or verifica2 > -10):
+				print "esquerda"
+				statusplayer1HandRightx.append(2)
+			else:
+				print "parado"
+				statusplayer1HandRightx.append(0)				
+				
+				
+while True:
+	frame = userTracker.read_frame()
+	depth_frame = frame.get_depth_frame()
+	if frame.users:
+		for user in frame.users:
+			print("Skeleton state: ", user.skeleton.state)
+			if user.is_new():
+				print("New human detected! ID: %d Calibrating...", user.id)
+				userTracker.start_skeleton_tracking(user.id)
+			elif user.skeleton.state == nite2.SkeletonState.NITE_SKELETON_TRACKED:            
+				print("New data tracked")                
+				head = user.skeleton.joints[nite2.JointType.NITE_JOINT_HEAD]
+				confidence = head.positionConfidence
+				print("Head: (x:%dmm, y:%dmm, z:%dmm), confidence: %.2f" % (head.position.x,head.position.y,head.position.z,confidence))
+    else:
+        print("No users")
+				
+				
+				
+	while True
+		frame = userTracker.read_frame()
+		depth_frame = frame.get_depth_frame()
+		if frame.users:
+			for user in frame.users:
+				if user.is_new():
+					print("New human detected! ID: %d Calibrating...", user.id)
+					userTracker.start_skeleton_tracking(user.id)
+				elif user.skeleton.state == nite2.SkeletonState.NITE_SKELETON_TRACKED:                           
+					
+					leftHand = user.skeleton.joints[nite2.JointType.NITE_JOINT_LEFT_HAND]
+					rightHand = user.skeleton.joints[nite2.JointType.NITE_JOINT_RIGHT_HAND]					
+					
+					if user.id == 1:
+						player1HandRightx.append(round(rightHand.position.x, 4))
+						player1HandRighty.append(round(rightHand.position.y,4))
+						player1HandLeftx.append(round(leftHand.position.x,4))
+						player1HandLefty.append(round(leftHand.position.y,4))
+					if user.id == 2:
+						print 'user 2'
+						player2HandRightx.append(round(rightHand.position.x, 4))
+						player2HandRighty.append(round(rightHand.position.y,4))
+						player2HandLeftx.append(round(leftHand.position.x,4))
+						player2HandLefty.append(round(leftHand.position.y,4))						
+		else:
+			print("No users")
+	
+				
+	
+				
+				
+userTrackerFrame = nite2.UserTrackerFrameRef
+	while True:
+		const nite2.Array<nite.UserData>& users = userTrackerFrame.getUsers()
+		i=0
+		while i < users.getSize():
+		{
+			const nite2::UserData& user = users[i]
+			if user.isNew():
+			{
+				userTracker.startSkeletonTracking(user.id)
+			}
+			elif user.getSkeleton().getState() == nite2.SKELETON_TRACKED:
+			{
+				const nite2.SkeletonJoint& head = user.skeleton.joints[nite2.JointType.NITE_JOINT_HEAD]
+				print user.getId()
+				print head.getPosition().x
+				print head.getPosition().y 
+				print head.getPosition().z
+			}
+			i +=1
+		}			
+			
+			
+
+				
+				

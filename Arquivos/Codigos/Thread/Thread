@@ -1,0 +1,65 @@
+#!/usr/bin/python
+
+# lista com uma dimensao
+um   = [5, 7, 9]
+print(um, um[1])
+
+# lista com duas dimensoes
+dois = [ ['00', '01'], ['10', '11'] ]
+print(dois) # imprime a matriz
+print(dois[0], dois[1]) # o primeiro mostra a linha correspondente
+print(dois[1][1])       # dois indices para acessar um elemento
+
+# lista com tres dimensoes. Cada elemento dessa lista 3d eh uma matriz.
+tres = [ [ ['000', '001'], ['010', '011'] ], [ ['100', '101'], ['110', '111'] ] ]
+print(tres[1])     # imprime a 2a matriz com [ ['100', '101'], ['110', '111'] ]
+print(tres[1][0])  # imprime a 1a linha da 2a matriz da estrutura `tres`
+print(tres[1][0][1]) # imprime o elemento na posicao 3d (1, 0, 1)
+
+
+
+
+import threading
+import time
+
+i = 3
+
+def conta(threadID):
+  global i
+  print "Entrou"
+  while i > 0:
+    print "%d" % (i)
+  threadID.exit()
+
+def subtrai(threadID):
+  global i
+  while i > 0:
+    time.sleep(1)
+    i -= 1
+  threadID.exit()
+		
+class myThread (threading.Thread):
+  def __init__(self, threadID):
+    threading.Thread.__init__(self)
+    self.threadID = threadID
+  def run(self):
+    print "Starting " + self.threadID
+    conta(self.threadID)
+    print "Exiting " + self.threadID
+
+class myThread2 (threading.Thread):
+  def __init__(self, threadID):
+    threading.Thread.__init__(self)
+    self.threadID = threadID
+  def run(self):
+    print "Starting " + self.threadID
+    subtrai(self.threadID)
+    print "Exiting " + self.threadID
+
+thread1 = myThread("thread-1")
+thread2 = myThread2("Thread-2")
+
+thread1.start()
+thread2.start()
+
+print "Exiting Main Thread"

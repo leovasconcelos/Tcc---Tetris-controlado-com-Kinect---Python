@@ -1,0 +1,266 @@
+http://www.decom.ufop.br/imobilis/programando-para-kinect-no-linux/ - instalar
+
+*verificar se e possivel salvar prints da tela igual os jogos de kinect e mostrar no final do jogo
+
+Verificar movimentos
+mudar comando dependendo da fase
+movimentos dos jogadores juntos
+    apenas pausar o jogo se os dois jogadores colocarem as mãos para frente
+    alterar comando dos jogadores
+
+
+for event in pygame.event.get():
+				if event.type == pygame.USEREVENT+1:
+					self.drop(False)
+				elif event.type == pygame.QUIT:
+					self.quit()
+				elif event.type == pygame.KEYDOWN:
+					for key in key_actions:
+						if event.key == eval("pygame.K_"
+						+key):
+							key_actions[key]()
+
+O pygame usar o evento de KEYDOWN, como trocar esse evento para o movimento ?
+    pensei em print mas a imagem e muito rapido
+    com o print verificar oque esta la dentro dentro de um segundo e verificar se o movimento foi crescendo na posição X ou diminuindo assim sabe se é direita ou esquerda
+    talvez ja exista um .movimento
+
+https://stackoverflow.com/questions/42816699/make-a-game-written-that-can-interact-with-the-kinect-sensor-using-visual-studio
+
+def draw_joints(screen, joints):
+    head = joints[nite2.JointType.NITE_JOINT_HEAD]
+    leftHand = joints[nite2.JointType.NITE_JOINT_LEFT_HAND]
+    rightHand = joints[nite2.JointType.NITE_JOINT_RIGHT_HAND]
+
+    list = (head, leftHand, rightHand)
+
+    for joint in list:
+        (depthX, depthY) = userTracker.convert_joint_coordinates_to_depth(joint.position.x, joint.position.y,
+                                                                          joint.position.z)
+        pygame.draw.circle(screen, (0, 0, 255), (int(depthX), int(depthY)), 10)
+
+Como funciona o comando de desenhar um circulo ?
+
+print '\n Esquerda Y:\n'.join(map(str, player1HandLefty))
+ 			player1HandLeftx = []
+			print 'lista vazia: ' 
+			print player1HandLefty
+            
+#Lista começa com zero 
+
+o verificarMovimentos preenche uma lista
+
+e outra fução verifica o movimento para dar o comando
+
+essa função verifica se todos apontam para a mesma direção
+
+
+
+O codigo esta verificando os pontos xy da mão direita, toda vez que o ponto aumenta a variavel da direita  soma mais um, se o contrario o da esquerda soma.
+com esses valores vejo qual deles aparecem mais que 70 % das vezes por causa da poluição da imagem e vejo se nesse conjuntos de frames foi direita ou esquerda.
+
+Duvida 
+
+eu ja defino a partir disso o status? eu estava preenchendo uma outra lista e com isso comparando se as ultimas 3 verificações qual e o movimento estava ate que funcionando mas o kinect estava
+com dificuldades para manter os pontos conforme um teste que fiz com o testcolorstream.py
+
+
+
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/threading.py", line 801, in __bootstrap_inner
+    self.run()
+  File "Tetris", line 290, in run
+    verificarMovimentos()
+  File "Tetris", line 176, in verificarMovimentos
+    verifica2 = player1HandRightx[x-1] - player1HandRightx[0]
+IndexError: list index out of range
+
+verifica2 > 100
+
+
+
+direita
+-0.9176
+parado
+-161.2341
+direita
+-67.4066
+direita
+62.6654
+esquerda
+69.77
+esquerda
+59.712
+esquerda
+38.5354
+esquerda
+-55.5007
+direita
+
+
+
+
+<openni.nite2.UserData object at 0x7f8970ede8d8>
+<openni.nite2.UserData object at 0x7f89703da168>
+<openni.nite2.UserData object at 0x7f8970ede8d8>
+<openni.nite2.UserData object at 0x7f89703da168>
+<openni.nite2.UserData object at 0x7f8970ede8d8>
+<openni.nite2.UserData object at 0x7f89703da168>
+<openni.nite2.UserData object at 0x7f8970ede8d8>
+<openni.nite2.UserData object at 0x7f89703da168>
+<openni.nite2.UserData object at 0x7f8970ede8d8>
+
+
+
+cima e -200
+baixo e - 600
+
+
+
+
+
+
+
+
+
+
+roda uma vez tenta sincronizar
+
+
+
+0,0
+
+
+
+
+		288,396
+		576,792
+		
+		420,640
+
+
+playonex
+167
+stonex1
+224
+stonex2
+32
+playonex
+308
+playoney
+111
+stonex1
+224
+stonex2
+32
+playonex
+404
+playoney
+
+
+def rotate_clockwise(shape):
+	return [ [ shape[y][x]
+			for y in xrange(len(shape)) ]
+		for x in xrange(len(shape[0]) - 1, -1, -1) ]
+
+def check_collision(board, shape, offset):
+	off_x, off_y = offset
+	for cy, row in enumerate(shape):
+		for cx, cell in enumerate(row):
+			try:
+				if cell and board[ cy + off_y ][ cx + off_x ]:
+					return True
+			except IndexError:
+				return True
+	return False
+
+def remove_row(board, row):
+	del board[row]
+	return [[0 for i in xrange(cols)]] + board
+	
+def join_matrixes(mat1, mat2, mat2_off):
+	off_x, off_y = mat2_off
+	for cy, row in enumerate(mat2):
+		for cx, val in enumerate(row):
+			mat1[cy+off_y-1	][cx+off_x] += val
+	return mat1
+
+def new_board():
+	board = [ [ 0 for x in xrange(cols) ]
+			for y in xrange(rows) ]
+	board += [[ 1 for x in xrange(cols)]]
+	return board	
+
+-------------------------------------------------------------------------------------------------------------------
+	def rotate_clockwise(shape):
+		return [ [ shape[y][x]
+				for y in xrange(len(shape)) ]
+			for x in xrange(len(shape[0]) - 1, -1, -1) ]
+
+	def check_collision(board, shape, offset):
+		off_x, off_y = offset
+		for cy, row in enumerate(shape):
+			for cx, cell in enumerate(row):
+				try:
+					if cell and board[ cy + off_y ][ cx + off_x ]:
+						return True
+				except IndexError:
+					return True
+		return False
+
+	def remove_row(board, row):
+		del board[row]
+		return [[0 for i in xrange(cols)]] + board
+	
+	def join_matrixes(mat1, mat2, mat2_off):
+		off_x, off_y = mat2_off
+		for cy, row in enumerate(mat2):
+			for cx, val in enumerate(row):
+				mat1[cy+off_y-1	][cx+off_x] += val
+		return mat1
+
+	def new_board():
+		board = [ [ 0 for x in xrange(cols) ]
+				for y in xrange(rows) ]
+		board += [[ 1 for x in xrange(cols)]]
+		return board
+
+
+
+
+comprimento 640
+altura		480	
+
+comprimento 288*2 = 576
+altura 		396*2 = 792
+
+
+792 / 480 = 1,65
+
+576 / 640 = 1,11
+
+comprimento não apresenta muitos problemas para a jogabilidade esta ruim mas não tanto
+
+altura não chega na parte de baixo
+
+talvez utilizar em um ambiente melhor
+	luz
+	espaço
+	
+
+
+deu ruim
+	self.width = (cell_size*(cols+6)) * 1.11
+	self.height = (cell_size*rows) * 1.65
+
+
+
+sudo freenect-glview
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+sudo add-apt-repository ppa:notepadqq-team/notepadqq
+sudo apt-get update
+sudo apt-get install notepadqq 
+
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update
+sudo apt-get install sublime-text-installer
+
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/libfreenect-master/build $ 
+
+sudo freenect-glview
+
+ldd nome_Arquivo -> le os arquivos que o programa precisa
+
+lsusb -> le os dispositivos conectados
+
+mkdir -> cria a pasta
+
+cd -> entra na pasta
+
+cd .. -> volta uma pasta
+
+
+LD_LIBRARY_PATH é um diretório ou lista de diretórios, você definiu ele com o nome do arquivo. Ele não acha assim.
+
+link dinamico ->  ln -s <caminho completo do arquivo original> <nome do link>
+
+OniPlatform.h pesquisar
+
+export LD_LIBRARY_PATH=<diretorio da openNI>
+
+export OPENNI2_INCLUDE=/home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Include

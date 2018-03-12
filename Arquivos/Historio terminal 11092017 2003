@@ -1,0 +1,584 @@
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~ $ cd Downloads/PythonKinect/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ ls
+PythonKinect-master-96428b59232d281e0ec33207b135dbb59f94269f.zip
+testcolorstream.py
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ python testcolorstream.py 
+OpenNI2-FreenectDriver: Using libfreenect v0.5.5
+Traceback (most recent call last):
+  File "testcolorstream.py", line 40, in <module>
+    nite2.initialize("/home/leonardo/Tcc/NiTE-2.0.0/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/nite2.py", line 86, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: NiTE2 could not be loaded:
+    /home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so: libOpenNI2.so: cannot open shared object file: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ ^C
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ ^C
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ export LD_LIBRARY_PATH=/home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so 
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ CD ..
+CD .CD: command not found
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ cd ..
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads $ cd ..
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~ $ cd Tcc/NiTE-2.0.0/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0 $ ls
+Documentation  install.sh  NiTEDevEnvironment  Samples
+Include        License     Redist
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0 $ Samples/
+bash: Samples/: Is a directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0 $ Bin
+No command 'Bin' found, did you mean:
+ Command 'win' from package 'wily' (universe)
+ Command 'tin' from package 'tin' (universe)
+ Command 'din' from package 'din' (universe)
+Bin: command not found
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0 $ cd Bin
+bash: cd: Bin: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0 $ ls
+Documentation  install.sh  NiTEDevEnvironment  Samples
+Include        License     Redist
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0 $ cd Samples/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Samples $ cd Bin/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Samples/Bin $ ls
+HandViewer    libOpenNI2.so  OpenNI.ini         SimpleUserTracker
+Intermediate  NiTE.ini       PS1080.ini         UserViewer
+libNiTE2.so   OpenNI2        SimpleHandTracker
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Samples/Bin $ ldd UserViewer 
+	linux-vdso.so.1 =>  (0x00007fffaa5ed000)
+	libglut.so.3 => /usr/lib/x86_64-linux-gnu/libglut.so.3 (0x00007f9439e2d000)
+	libGL.so.1 => /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1 (0x00007f9439bbb000)
+	libOpenNI2.so => ./libOpenNI2.so (0x00007f9439944000)
+	libNiTE2.so => ./libNiTE2.so (0x00007f94392bc000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f9438f3a000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f9438d24000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f943895a000)
+	libX11.so.6 => /usr/lib/x86_64-linux-gnu/libX11.so.6 (0x00007f9438620000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f9438317000)
+	libXi.so.6 => /usr/lib/x86_64-linux-gnu/libXi.so.6 (0x00007f9438107000)
+	libXxf86vm.so.1 => /usr/lib/x86_64-linux-gnu/libXxf86vm.so.1 (0x00007f9437f01000)
+	libexpat.so.1 => /lib/x86_64-linux-gnu/libexpat.so.1 (0x00007f9437cd8000)
+	libxcb-dri3.so.0 => /usr/lib/x86_64-linux-gnu/libxcb-dri3.so.0 (0x00007f9437ad5000)
+	libxcb-present.so.0 => /usr/lib/x86_64-linux-gnu/libxcb-present.so.0 (0x00007f94378d2000)
+	libxcb-sync.so.1 => /usr/lib/x86_64-linux-gnu/libxcb-sync.so.1 (0x00007f94376cb000)
+	libxshmfence.so.1 => /usr/lib/x86_64-linux-gnu/libxshmfence.so.1 (0x00007f94374c8000)
+	libglapi.so.0 => /usr/lib/x86_64-linux-gnu/libglapi.so.0 (0x00007f9437299000)
+	libXext.so.6 => /usr/lib/x86_64-linux-gnu/libXext.so.6 (0x00007f9437087000)
+	libXdamage.so.1 => /usr/lib/x86_64-linux-gnu/libXdamage.so.1 (0x00007f9436e84000)
+	libXfixes.so.3 => /usr/lib/x86_64-linux-gnu/libXfixes.so.3 (0x00007f9436c7e000)
+	libX11-xcb.so.1 => /usr/lib/x86_64-linux-gnu/libX11-xcb.so.1 (0x00007f9436a7c000)
+	libxcb-glx.so.0 => /usr/lib/x86_64-linux-gnu/libxcb-glx.so.0 (0x00007f9436863000)
+	libxcb-dri2.so.0 => /usr/lib/x86_64-linux-gnu/libxcb-dri2.so.0 (0x00007f943665e000)
+	libxcb.so.1 => /usr/lib/x86_64-linux-gnu/libxcb.so.1 (0x00007f943643c000)
+	libdrm.so.2 => /usr/lib/x86_64-linux-gnu/libdrm.so.2 (0x00007f943622b000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f943600e000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007f9435e0a000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f9435c02000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f943a075000)
+	libXau.so.6 => /usr/lib/x86_64-linux-gnu/libXau.so.6 (0x00007f94359fe000)
+	libXdmcp.so.6 => /usr/lib/x86_64-linux-gnu/libXdmcp.so.6 (0x00007f94357f8000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Samples/Bin $ ls
+HandViewer    libNiTE2.so    NiTE.ini  OpenNI.ini  SimpleHandTracker  UserViewer
+Intermediate  libOpenNI2.so  OpenNI2   PS1080.ini  SimpleUserTracker
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Samples/Bin $ ./UserViewer 
+Failed to open device
+	DeviceOpen using default: no devices found
+
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Samples/Bin $ cd ..
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Samples $ cd..
+cd..: command not found
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Samples $ cd ..
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0 $ cd ..
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc $ cd ..
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~ $ cd Downloads/PythonKinect/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ python testcolorstream.py 
+OpenNI2-FreenectDriver: Using libfreenect v0.5.5
+Traceback (most recent call last):
+  File "testcolorstream.py", line 40, in <module>
+    nite2.initialize("/home/leonardo/Tcc/NiTE-2.0.0/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/nite2.py", line 86, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: NiTE2 could not be loaded:
+    /home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so: libOpenNI2.so: cannot open shared object file: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ ^C
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ ^C
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ cd ~/Tcc/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc $ ls
+libfreenect-master         NiTE-Linux-x64-2.0.0.tar.zip  openni-python-master(2).zip
+libfreenect-master(1).zip  OpenNI-Linux-x64-2.2
+NiTE-2.0.0                 openni-python-master
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc $ NiTE-2.0.0/
+bash: NiTE-2.0.0/: Is a directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc $ cd NiTE-2.0.0/Redist/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ls
+libFreenectDriver.so        libfreenect.so        libfreenect_sync.so        libNiTE2.so
+libFreenectDriver.so.0.5    libfreenect.so.0.5    libfreenect_sync.so.0.5    NiTE2
+libFreenectDriver.so.0.5.5  libfreenect.so.0.5.5  libfreenect_sync.so.0.5.5  NiTE.ini
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ export LD_LIBRARY_PATH=/home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ cd ~/Downloads/PythonKinect/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ ls
+PythonKinect-master-96428b59232d281e0ec33207b135dbb59f94269f.zip  testcolorstream.py
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ python testcolorstream.py 
+OpenNI2-FreenectDriver: Using libfreenect v0.5.5
+Traceback (most recent call last):
+  File "testcolorstream.py", line 40, in <module>
+    nite2.initialize("/home/leonardo/Tcc/NiTE-2.0.0/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/nite2.py", line 86, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: NiTE2 could not be loaded:
+    /home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so: libOpenNI2.so: cannot open shared object file: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ cd /home/leonardo/Tcc/NiTE-2.0.0/Redist
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ls
+libFreenectDriver.so        libfreenect.so        libfreenect_sync.so        libNiTE2.so
+libFreenectDriver.so.0.5    libfreenect.so.0.5    libfreenect_sync.so.0.5    NiTE2
+libFreenectDriver.so.0.5.5  libfreenect.so.0.5.5  libfreenect_sync.so.0.5.5  NiTE.ini
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ cd ~/Downloads/PythonKinect/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ ls
+PythonKinect-master-96428b59232d281e0ec33207b135dbb59f94269f.zip  testcolorstream.py
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ python testcolorstream.py 
+OpenNI2-FreenectDriver: Using libfreenect v0.5.5
+Traceback (most recent call last):
+  File "testcolorstream.py", line 40, in <module>
+    nite2.initialize("/home/leonardo/Tcc/NiTE-2.0.0/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/nite2.py", line 86, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: NiTE2 could not be loaded:
+    /home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so: libOpenNI2.so: cannot open shared object file: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ cd /home/leonardo/Tcc/NiTE-2.0.0/Redist
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ls
+libFreenectDriver.so        libfreenect.so        libfreenect_sync.so        libNiTE2.so    NiTE.ini
+libFreenectDriver.so.0.5    libfreenect.so.0.5    libfreenect_sync.so.0.5    libOpenNI2.so
+libFreenectDriver.so.0.5.5  libfreenect.so.0.5.5  libfreenect_sync.so.0.5.5  NiTE2
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ldd libOpenNI2.so 
+	linux-vdso.so.1 =>  (0x00007ffdaabfc000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007f41bf979000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f41bf75c000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f41bf554000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f41bf1d2000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f41beec9000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f41becb3000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f41be8e9000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f41bfdf9000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ldd libOpenNI2.so
+	linux-vdso.so.1 =>  (0x00007ffc2dff5000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007fbef77aa000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007fbef758d000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007fbef7385000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fbef7003000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007fbef6cfa000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007fbef6ae4000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fbef671a000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007fbef7c2a000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ldd libNiTE2.so
+	linux-vdso.so.1 =>  (0x00007ffed378b000)
+	libOpenNI2.so => not found
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007fe67d65c000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007fe67d454000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fe67d0d2000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007fe67cdc9000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007fe67cbb3000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fe67c7e9000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007fe67df01000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ln -s libNiTE2.so /home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so 
+ln: failed to create symbolic link '/home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so': File exists
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ln -s libNiTE2.so /home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so 
+ln: failed to create symbolic link '/home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so': File exists
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ln -s libNiTE2.so /home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so 
+ln: failed to create symbolic link '/home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so': File exists
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ln -s libOpenNI2.so /home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so 
+ln: failed to create symbolic link '/home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so': File exists
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ldd libNiTE2.so 
+	linux-vdso.so.1 =>  (0x00007ffca53cc000)
+	libOpenNI2.so => not found
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f130ba1e000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f130b816000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f130b494000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f130b18b000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f130af75000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f130abab000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f130c2c3000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ^C
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ^C
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ 
+
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~ $ cd Downloads/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads $ ls
+get-pip.py                         openni-python-master
+libfreenect                        openni-python-master(1).zip
+libfreenect-master.zip             openni-python-master.zip
+libNiTE2.so                        Python-3.6.2
+NiTE-2.0.0                         Python-3.6.2.tar.xz
+NiTE-Linux-x64-2.2                 PythonKinect
+NiTE-Linux-x64-2.2.tar.bz2         temp
+NiTE-Linux-x64-2.2.tar.zip         tetris_73.zip
+NiTE-Linux-x86-2.0.0.tar.bz2       tetris-Feio
+NiTE-Linux-x86-2.0.0.tar.zip       Tetris-Font_Nao_funciona
+opencv-master.zip                  tetris_funciona.py
+OpenNI-Linux-x64-2.2               tetris-Incompleto.py
+OpenNI-Linux-x64-2.2.0.33.tar.bz2  Untitled Diagram.xml
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads $ cd PythonKinect/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ ls
+PythonKinect-master-96428b59232d281e0ec33207b135dbb59f94269f.zip
+testcolorstream.py
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ python testcolorstream.py 
+OpenNI2-FreenectDriver: Using libfreenect v0.5.5
+Traceback (most recent call last):
+  File "testcolorstream.py", line 40, in <module>
+    nite2.initialize("/home/leonardo/Tcc/NiTE-2.0.0/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/nite2.py", line 86, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: NiTE2 could not be loaded:
+    /home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so: libOpenNI2.so: cannot open shared object file: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ ^C
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ ^C
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ python testcolorstream.py 
+OpenNI2-FreenectDriver: Using libfreenect v0.5.5
+Traceback (most recent call last):
+  File "testcolorstream.py", line 40, in <module>
+    nite2.initialize("/home/leonardo/Tcc/NiTE-2.0.0/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/nite2.py", line 86, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: NiTE2 could not be loaded:
+    /home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so: libOpenNI2.so: cannot open shared object file: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ python testcolorstream.py 
+OpenNI2-FreenectDriver: Using libfreenect v0.5.5
+Traceback (most recent call last):
+  File "testcolorstream.py", line 40, in <module>
+    nite2.initialize("/home/leonardo/Tcc/NiTE-2.0.0/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/nite2.py", line 86, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: NiTE2 could not be loaded:
+    /home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so: libOpenNI2.so: cannot open shared object file: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ 
+
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f41becb3000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f41be8e9000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f41bfdf9000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ldd libOpenNI2.so
+	linux-vdso.so.1 =>  (0x00007ffc2dff5000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007fbef77aa000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007fbef758d000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007fbef7385000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fbef7003000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007fbef6cfa000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007fbef6ae4000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fbef671a000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007fbef7c2a000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ldd libNiTE2.so
+	linux-vdso.so.1 =>  (0x00007ffed378b000)
+	libOpenNI2.so => not found
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007fe67d65c000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007fe67d454000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fe67d0d2000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007fe67cdc9000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007fe67cbb3000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fe67c7e9000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007fe67df01000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ln -s libNiTE2.so /home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so 
+ln: failed to create symbolic link '/home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so': File exists
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ln -s libNiTE2.so /home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so 
+ln: failed to create symbolic link '/home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so': File exists
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ln -s libNiTE2.so /home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so 
+ln: failed to create symbolic link '/home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so': File exists
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ln -s libOpenNI2.so /home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so 
+ln: failed to create symbolic link '/home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so': File exists
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ldd libNiTE2.so 
+	linux-vdso.so.1 =>  (0x00007ffca53cc000)
+	libOpenNI2.so => not found
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f130ba1e000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f130b816000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f130b494000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f130b18b000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f130af75000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f130abab000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f130c2c3000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ^C
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ^C
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ clear
+
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ln -s /home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so libOpenNI2.so
+ln: failed to create symbolic link 'libOpenNI2.so': File exists
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ln -s /home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so libOpenNI2.so
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ldd libNiTE2.so 	linux-vdso.so.1 =>  (0x00007ffcc5baa000)
+	libOpenNI2.so => not found
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f70f2b48000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f70f2940000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f70f25be000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f70f22b5000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f70f209f000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f70f1cd5000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f70f33ed000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ export LD_LIBRARY_PATH=/home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist 
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ldd libNiTE2.so 	linux-vdso.so.1 =>  (0x00007fff2e9c4000)
+	libOpenNI2.so => /home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so (0x00007f771fd44000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f771fb27000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f771f91f000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f771f59d000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f771f294000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f771f07e000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f771ecb4000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007f771eab0000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f7720648000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ 
+
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ln -s /home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so libOpenNI2.so
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ldd libNiTE2.so 	linux-vdso.so.1 =>  (0x00007ffcc5baa000)
+	libOpenNI2.so => not found
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f70f2b48000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f70f2940000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f70f25be000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f70f22b5000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f70f209f000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f70f1cd5000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f70f33ed000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ export LD_LIBRARY_PATH=/home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist 
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ldd libNiTE2.so 	linux-vdso.so.1 =>  (0x00007fff2e9c4000)
+	libOpenNI2.so => /home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so (0x00007f771fd44000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f771fb27000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f771f91f000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f771f59d000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f771f294000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f771f07e000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f771ecb4000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007f771eab0000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f7720648000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ clear
+
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ldd libNiTE2.so
+	linux-vdso.so.1 =>  (0x00007ffedd7df000)
+	libOpenNI2.so => /home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so (0x00007f7f90bd2000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f7f909b5000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f7f907ad000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f7f9042b000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f7f90122000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f7f8ff0c000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f7f8fb42000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007f7f8f93e000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f7f914d6000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ldd libOpenNI2.so
+	linux-vdso.so.1 =>  (0x00007fff53bd8000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007f0d59af3000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f0d598d6000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f0d596ce000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f0d5934c000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f0d59043000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f0d58e2d000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f0d58a63000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f0d59f73000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ 
+
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~ $ cd Downloads/PythonKinect/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ ls
+PythonKinect-master-96428b59232d281e0ec33207b135dbb59f94269f.zip
+testcolorstream.py
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ python testcolorstream.py 
+OpenNI2-FreenectDriver: Using libfreenect v0.5.5
+Traceback (most recent call last):
+  File "testcolorstream.py", line 40, in <module>
+    nite2.initialize("/home/leonardo/Tcc/NiTE-2.0.0/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/nite2.py", line 86, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: NiTE2 could not be loaded:
+    /home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so: libOpenNI2.so: cannot open shared object file: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ ^C
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ ^C
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ python testcolorstream.py 
+OpenNI2-FreenectDriver: Using libfreenect v0.5.5
+Traceback (most recent call last):
+  File "testcolorstream.py", line 40, in <module>
+    nite2.initialize("/home/leonardo/Tcc/NiTE-2.0.0/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/nite2.py", line 86, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: NiTE2 could not be loaded:
+    /home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so: libOpenNI2.so: cannot open shared object file: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ python testcolorstream.py 
+OpenNI2-FreenectDriver: Using libfreenect v0.5.5
+Traceback (most recent call last):
+  File "testcolorstream.py", line 41, in <module>
+    nite2.initialize("/home/leonardo/Tcc/NiTE-2.0.0/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/nite2.py", line 86, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: NiTE2 could not be loaded:
+    /home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so: libOpenNI2.so: cannot open shared object file: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ python testcolorstream.py 
+OpenNI2-FreenectDriver: Using libfreenect v0.5.5
+Traceback (most recent call last):
+  File "testcolorstream.py", line 41, in <module>
+    nite2.initialize("/home/leonardo/Tcc/NiTE-2.0.0/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/nite2.py", line 86, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: NiTE2 could not be loaded:
+    /home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so: libOpenNI2.so: cannot open shared object file: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ 
+
+    nite2.initialize("/home/leonardo/Tcc/NiTE-2.0.0/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/nite2.py", line 86, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: NiTE2 could not be loaded:
+    /home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so: libOpenNI2.so: cannot open shared object file: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ python testcolorstream.py 
+OpenNI2-FreenectDriver: Using libfreenect v0.5.5
+Traceback (most recent call last):
+  File "testcolorstream.py", line 41, in <module>
+    nite2.initialize("/home/leonardo/Tcc/NiTE-2.0.0/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/nite2.py", line 86, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: NiTE2 could not be loaded:
+    /home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so: libOpenNI2.so: cannot open shared object file: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ python testcolorstream.py 
+OpenNI2-FreenectDriver: Using libfreenect v0.5.5
+Traceback (most recent call last):
+  File "testcolorstream.py", line 41, in <module>
+    nite2.initialize("/home/leonardo/Tcc/NiTE-2.0.0/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/nite2.py", line 86, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: NiTE2 could not be loaded:
+    /home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so: libOpenNI2.so: cannot open shared object file: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ clear
+
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ ls
+PythonKinect  PythonKinect-master-96428b59232d281e0ec33207b135dbb59f94269f.zip  testcolorstream.py
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect $ cd PythonKinect/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect $ ls
+README.md  testes
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect $ cd testes/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ ls
+libFreenectDriver.so        libNiTE2.so    NiTE.ini            testopenni.py
+libFreenectDriver.so.0.5    libOpenNI2.so  testcolorstream.py
+libFreenectDriver.so.0.5.5  NiTE2          testdisplay.py
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ ls
+libFreenectDriver.so        libNiTE2.so    NiTE.ini            testopenni.py
+libFreenectDriver.so.0.5    libOpenNI2.so  testcolorstream.py
+libFreenectDriver.so.0.5.5  NiTE2          testdisplay.py
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ python testecolorstream.py
+python: can't open file 'testecolorstream.py': [Errno 2] No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ python testcolorstream.py
+  File "testcolorstream.py", line 8
+SyntaxError: Non-ASCII character '\xc3' in file testcolorstream.py on line 8, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ python testcolorstream.py
+  File "testcolorstream.py", line 8
+SyntaxError: Non-ASCII character '\xc3' in file testcolorstream.py on line 8, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ python3 testcolorstream.py
+  File "testcolorstream.py", line 44
+    print sensor_info.videoModes
+                    ^
+SyntaxError: Missing parentheses in call to 'print'
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ python2 testcolorstream.py
+  File "testcolorstream.py", line 8
+SyntaxError: Non-ASCII character '\xc3' in file testcolorstream.py on line 8, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ python testcolorstream.py
+  File "testcolorstream.py", line 8
+SyntaxError: Non-ASCII character '\xc3' in file testcolorstream.py on line 8, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ python testcolorstream.py
+Traceback (most recent call last):
+  File "testcolorstream.py", line 38, in <module>
+    openni2.initialize("/home/thiago/OpenNI-Linux-x64-2.2/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/openni2.py", line 104, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: OpenNI2 could not be loaded:
+    /home/thiago/OpenNI-Linux-x64-2.2/Redist: Directory does not exist
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ python testcolorstream.py
+OpenNI2-FreenectDriver: Using libfreenect v0.5.5
+Traceback (most recent call last):
+  File "testcolorstream.py", line 44, in <module>
+    nite2.initialize("/home/leonardo/Tcc/NiTE-2.0.0/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/nite2.py", line 86, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: NiTE2 could not be loaded:
+    /home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so: libOpenNI2.so: cannot open shared object file: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ python testcolorstream.py
+OpenNI2-FreenectDriver: Using libfreenect v0.5.5
+Traceback (most recent call last):
+  File "testcolorstream.py", line 44, in <module>
+    nite2.initialize("/home/leonardo/Tcc/NiTE-2.0.0/Redist")
+  File "/usr/local/lib/python2.7/dist-packages/openni/nite2.py", line 86, in initialize
+    ("\n    ".join("%s: %s" % (dir, ex) for dir, ex in exceptions)),)
+openni.utils.InitializationError: NiTE2 could not be loaded:
+    /home/leonardo/Tcc/NiTE-2.0.0/Redist/libNiTE2.so: libOpenNI2.so: cannot open shared object file: No such file or directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ 
+
+
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~ $ cd Tcc/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc $ ls
+libfreenect-master            OpenNI-Linux-x64-2.2
+libfreenect-master(1).zip     openni-python-master
+NiTE-2.0.0                    openni-python-master(2).zip
+NiTE-Linux-x64-2.0.0.tar.zip
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc $ cd NiTE-2.0.0/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0 $ ls
+Documentation  install.sh  NiTEDevEnvironment  Samples
+Include        License     Redist
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0 $ Redist/
+bash: Redist/: Is a directory
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0 $ ls
+Documentation  install.sh  NiTEDevEnvironment  Samples
+Include        License     Redist
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0 $ cd Redist/
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ls
+libFreenectDriver.so        libfreenect.so.0.5.5       libOpenNI2.so
+libFreenectDriver.so.0.5    libfreenect_sync.so        NiTE2
+libFreenectDriver.so.0.5.5  libfreenect_sync.so.0.5    NiTE.ini
+libfreenect.so              libfreenect_sync.so.0.5.5
+libfreenect.so.0.5          libNiTE2.so
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ldd libNiTE2.so
+	linux-vdso.so.1 =>  (0x00007ffc001dc000)
+	libOpenNI2.so => not found
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f6a680a5000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f6a67e9d000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f6a67b1b000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f6a67812000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f6a675fc000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f6a67232000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f6a6894a000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ln -s /home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so libOpenNI2.so
+ln: failed to create symbolic link 'libOpenNI2.so': File exists
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ldd libNiTE2.so	linux-vdso.so.1 =>  (0x00007ffc683a3000)
+	libOpenNI2.so => not found
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f5b0dc29000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f5b0da21000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f5b0d69f000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f5b0d396000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f5b0d180000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f5b0cdb6000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f5b0e4ce000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ export LD_LIBRARY_PATH=/home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist 
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ ldd libNiTE2.so	linux-vdso.so.1 =>  (0x00007ffc99174000)
+	libOpenNI2.so => /home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist/libOpenNI2.so (0x00007f28f82a1000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f28f8084000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f28f7e7c000)
+	libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f28f7afa000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f28f77f1000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f28f75db000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f28f7211000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007f28f700d000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f28f8ba5000)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Tcc/NiTE-2.0.0/Redist $ export LD_LIBRARY_PATH=/home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist 
+
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~ $ cd /home/leonardo/Downloads/PythonKinect/PythonKinect/testes
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ ls
+libFreenectDriver.so        libNiTE2.so    NiTE.ini            testopenni.py
+libFreenectDriver.so.0.5    libOpenNI2.so  testcolorstream.py
+libFreenectDriver.so.0.5.5  NiTE2          testdisplay.py
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ export LD_LIBRARY_PATH=/home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ python
+Python 2.7.12 (default, Nov 19 2016, 06:48:10) 
+[GCC 5.4.0 20160609] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ python testcolorstream.py 
+OpenNI2-FreenectDriver: Using libfreenect v0.5.5
+Traceback (most recent call last):
+  File "testcolorstream.py", line 47, in <module>
+    dev = openni2.Device.open_any()
+  File "/usr/local/lib/python2.7/dist-packages/openni/openni2.py", line 241, in open_any
+    return cls(None)
+  File "/usr/local/lib/python2.7/dist-packages/openni/openni2.py", line 206, in __init__
+    self._reopen()
+  File "/usr/local/lib/python2.7/dist-packages/openni/openni2.py", line 216, in _reopen
+    c_api.oniDeviceOpen(self._orig_uri, ctypes.byref(self._handle))
+  File "/usr/local/lib/python2.7/dist-packages/openni/_openni2.py", line 2102, in wrapper
+    raise OpenNIError(res, msg.strip(), logfile)
+openni.utils.OpenNIError: (OniStatus.ONI_STATUS_ERROR, 'DeviceOpen using default: no devices found', None)
+leonardo@leonardo-HP-Pavilion-g4-Notebook-PC ~/Downloads/PythonKinect/PythonKinect/testes $ export LD_LIBRARY_PATH=/home/leonardo/Tcc/OpenNI-Linux-x64-2.2/Redist
+
+
+
+
+
+

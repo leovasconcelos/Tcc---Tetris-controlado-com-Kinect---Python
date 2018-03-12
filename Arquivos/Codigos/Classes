@@ -1,0 +1,54 @@
+Classe: TetrisApp
+atributos:
+	width = int
+	height = int
+	rlim = int
+	bground_grid = [x,y]
+	
+	default_font:pygame.font
+	
+	default_font =  pygame.font.Font()
+	screen = pygame.display.set_mode()
+	next_stone = tetris_shapes[]
+	usuario: usuario
+	
+metodos:
+	new_stone:void
+	init_game:void
+	disp_msg:void
+	center_msg:void
+	draw_matrix:void
+	add_cl_lines:void
+	move:void
+	quit:void
+	drop:void
+	insta_drop:void
+	rotate_stone:void
+	toggle_pause:void
+	start_game:void
+	run:void
+	rotate_clockwise(shape):list
+	check_collision(board, shape, offset):boolean
+	remove_row(board,row):board
+	join_matrixes(mat1, mat2, mat2_off): list
+	new_board:board
+	
+Classe: pegarMovimentos
+atributos:
+	usuario:usuario
+	frame:userTracker.read_frame
+	depth_frame: frame.get_depth_frame
+metodos: 	
+	
+	
+	
+Classe:usuario
+atributos:
+	idUsuario:int
+	maoDireitaX:floar
+	maoDireitaY:float
+	maoEsquerdaX:float
+	maoEsquerdaY:float	
+metodos:
+	gets
+	sets
